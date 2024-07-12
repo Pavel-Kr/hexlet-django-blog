@@ -3,4 +3,6 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse('article')
+    return render(request, 'articles/index.html', context={
+        'app_name': 'Articles'
+    })
