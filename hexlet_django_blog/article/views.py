@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import View
 
-# Create your views here.
+
 class index(View):
 
     def get(self, request, *args, **kwargs):
@@ -10,7 +10,7 @@ class index(View):
             'tag': 'python',
             'article_id': 42
         }))
-    
+
 
 def article(request, tag, article_id):
     return render(
