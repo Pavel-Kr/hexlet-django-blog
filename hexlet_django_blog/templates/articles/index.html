@@ -4,7 +4,7 @@
     <h1>Список статей</h1>
     <div class="mt-4">
         {% for article in articles %}
-            <h2>{{ article.name }}</h2>
+            <h2><a href="{% url 'articles_detail' id=article.id %}">{{ article.name }}</a></h2>
             <p>{{ article.body|slice:"200" }}</p>
         {% endfor %}
     </div>
