@@ -2,14 +2,16 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import View
 
+from hexlet_django_blog.article.models import Article
 
-class index(View):
 
-    def get(self, request, *args, **kwargs):
-        return redirect(reverse('article', kwargs={
-            'tag': 'python',
-            'article_id': 42
-        }))
+class IndexView(View):
+
+    def get(self, request):
+        artticles = Article.objects.all()[:15]
+        return render(request, 'articles/index.html', context={
+            'articles': artticles
+        })
 
 
 def article(request, tag, article_id):
