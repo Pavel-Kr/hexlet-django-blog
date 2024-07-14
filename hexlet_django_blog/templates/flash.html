@@ -1,0 +1,5 @@
+{% if messages %}
+{% for message in messages %}
+<div class="bg-{{ message.tags }}-subtle p-3 rounded-2">{{ message }}</div>
+{% endfor %}
+{% endif %}
