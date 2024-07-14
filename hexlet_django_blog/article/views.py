@@ -8,6 +8,11 @@ from hexlet_django_blog.article.models import Article
 from .forms import ArticleForm
 
 
+MESSAGE_TAGS = {
+    msg_level.ERROR: 'danger'
+}
+
+
 class IndexView(View):
 
     def get(self, request):
