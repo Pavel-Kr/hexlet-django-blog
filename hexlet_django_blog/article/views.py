@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.messages import constants as msg_level
-from django.urls import reverse
 from django.views import View
 
 from hexlet_django_blog.article.models import Article
@@ -23,7 +22,7 @@ class IndexView(View):
 
 
 class ArticleView(View):
-    
+
     def get(self, request, *args, **kwargs):
         article = get_object_or_404(Article, id=kwargs['id'])
         return render(request, 'articles/show.html', context={
@@ -38,7 +37,7 @@ class ArticleFormCreateView(View):
         return render(request, 'articles/create.html', context={
             'form': form
         })
-    
+
     def post(self, request, *args, **kwargs):
         form = ArticleForm(request.POST)
         if form.is_valid():
