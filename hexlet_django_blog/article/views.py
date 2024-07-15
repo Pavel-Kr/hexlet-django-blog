@@ -72,7 +72,7 @@ class ArticleFormEditView(View):
             'form': form,
             'article_id': article_id
         })
-        
+
 
 class ArticleDeleteView(View):
 
