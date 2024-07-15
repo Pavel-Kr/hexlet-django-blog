@@ -1,14 +1,12 @@
 {% extends "base.html" %}
 
-{% load bootstrap4 %}
+{% load django_bootstrap5 %}
 
 {% block content %}
 <h1>Создать статью</h1>
 <form action="{% url 'articles_create' %}" method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
-    {% buttons %}
-        <input type="submit" value="Создать" class="btn btn-primary">
-    {% endbuttons %}
+    {% bootstrap_button button_type="submit" content="Создать" %}
 </form>
 {% endblock %}
