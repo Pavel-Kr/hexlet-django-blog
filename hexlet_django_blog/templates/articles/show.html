@@ -4,5 +4,11 @@
 {% block content %}
 <h1>{{ article.name }}</h1>
 <p>{{ article.body }}</p>
-<a href="{% url 'articles_update' id=article.id %}" class="btn btn-primary">Редактировать</a>
+<div class="d-flex">
+    <a href="{% url 'articles_update' id=article.id %}" class="btn btn-primary mr-2">Редактировать</a>
+    <form action="{% url 'articles_delete' id=article.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Удалить" class="btn btn-danger">
+    </form>
+</div>
 {% endblock %}
