@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+<h1>Редактировать статью</h1>
+<form action="{% url 'articles_update' id=article_id %}" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <input type="submit" value="Сохранить" class="btn btn-primary">
+    {% endbuttons %}
+</form>
+{% endblock %}
