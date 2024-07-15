@@ -12,6 +12,7 @@ packages = [
 python = "^3.10"
 django = "^5.0.7"
 python-dotenv = "^1.0.1"
+django-bootstrap4 = "^24.3"
 
 
 [tool.poetry.group.dev.dependencies]
